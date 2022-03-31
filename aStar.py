@@ -10,7 +10,13 @@ def Astar(start , goal , data):
 
         closedlist.append(current)
         openlist.remove(current)
-        for i in range(1,3):
+        
+
+
+    return 0
+
+def helper(openlist,closedlist,current,data,goal):
+    for i in range(1,3):
             for j in range(-1,2):
                 neighbour = current.copy()
                 if j:
@@ -30,8 +36,6 @@ def Astar(start , goal , data):
                                 new = neighbour.copy()
                                 openlist.append(new)
 
-
-    return 0
 
 def heuristic(location , goal):
     return abs(location[1] - goal[1]) + abs(location[2] - goal[2])
