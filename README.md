@@ -10,7 +10,7 @@ Instructions for use
     
 Does not work for very large grid sizes due to A star complexity, and the fact that I was not as experienced when I did this. I would definetely consider using more efficient data structures if I were to redo this project.
 
-But, it finds the most a path quite well for reasonable grid sizes/distances.
+But, it finds a path quite well for reasonable grid sizes/distances.
 
 
 Checkout the video for demo
