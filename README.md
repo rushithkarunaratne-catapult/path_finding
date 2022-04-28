@@ -2,7 +2,7 @@
 Illustratative path finder that uses A star and pygame
 Instructions for use 
      
-     press space on a sqaure for start point (yellow)
+     press space on a sqaure for start point (green)
          
      press up key for the goal (red)
                      
