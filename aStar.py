@@ -10,31 +10,27 @@ def Astar(start , goal , data):
 
         closedlist.append(current)
         openlist.remove(current)
-        
-
-
-    return 0
-
-def helper(openlist,closedlist,current,data,goal):
-    for i in range(1,3):
+        for i in range(1,3):
             for j in range(-1,2):
-                neighbour = current.copy()
-                if j:
-                    if current[i] + j >= 0 and current[i] + j < Size:
-                        neighbour[i] = current[i] + j
-                        #print(neighbour)
+                helper(current,data,closedlist,openlist,goal,i,j)
 
 
-                        if check_black(neighbour , data):
+def helper(current,data,closedlist,openlist,goal,i,j):
+    neighbour = current.copy()
+    if j:
+        if current[i] + j >= 0 and current[i] + j < Size:
+            neighbour[i] = current[i] + j
+                        
+            if check_black(neighbour , data):
 
-                            tmp_score = current[3] + 1
-                            neighbour[5] = current
-                            neighbour[3] = tmp_score
-                            neighbour[4] = heuristic(neighbour , goal) + tmp_score
+                tmp_score = current[3] + 1
+                neighbour[5] = current
+                neighbour[3] = tmp_score
+                neighbour[4] = heuristic(neighbour , goal) + tmp_score
                             
-                            if check_vists(closedlist , neighbour):
-                                new = neighbour.copy()
-                                openlist.append(new)
+                if check_vists(closedlist , neighbour):
+                    new = neighbour.copy()
+                    openlist.append(new)
 
 
 def heuristic(location , goal):
